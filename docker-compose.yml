@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    container_name: sao-app
+    container_name: sysos-app
     build: ./docker/php-fpm
     restart: unless-stopped
     volumes:
@@ -12,11 +12,11 @@ services:
       - interna
 
   web:
-    container_name: sao-web
+    container_name: sysos-web
     image: nginx:stable-alpine
     restart: unless-stopped
     environment:
-      - VIRTUAL_HOST=sao.rochamarinho.adv.br
+      - VIRTUAL_HOST=sysos.rochamarinho.adv.br
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./public:/application/public
@@ -25,10 +25,10 @@ services:
       - interna
     labels:
       - traefik.enable=true
-      - traefik.http.middlewares.sao-prefix.stripprefix.prefixes=/sao
-      - traefik.http.routers.sao.entrypoints=http
-      - traefik.http.routers.sao.middlewares=sao-prefix
-      - traefik.http.routers.sao.rule=Host(`homologacao.rochamarinho.adv.br`) && PathPrefix(`/sao`)
+      - traefik.http.middlewares.sysos-prefix.stripprefix.prefixes=/sysos
+      - traefik.http.routers.sysos.entrypoints=http
+      - traefik.http.routers.sysos.middlewares=sysos-prefix
+      - traefik.http.routers.sysos.rule=Host(`homologacao.rochamarinho.adv.br`) && PathPrefix(`/sysos`)
 
 networks:
   interna:
