@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rocha, Marinho e Sales Advogados - Trabalhe Conosco</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="http://sistemas.rochamarinho.adv.br/images/favicon.png">
+
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container" style="width: 100%; margin: 0px; padding: 0px;">
+
+        <div class="top">
+            <div class="header">
+                <div class="logo">
+                    <img src="images/logo.png" width="350" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="gray-line">
+            <div class="social">
+                <a class="face" href="https://www.instagram.com/rmsadvogados/" target="_blank" style="padding: 10px 20px; color: #fff;" title="Instagram">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a class="insta" href="https://www.facebook.com/rochamarinhoesalesadvogados/" target="_blank" style="padding: 10px 20px; color: #fff;" title="Facebook">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </a>
+                <a class="insta" href="https://www.linkedin.com/company/rocha-marinho-e-sales-advogados" target="_blank" style="padding: 10px 20px; color: #fff;" title="LinkedIn">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="banner"></div>
+
+        <div class="gray-line"></div>
+
+        <div class="content" style="padding: 20px;">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <!--<div align="center">
+                        <h1>Selecione o tipo da Vaga</h1>
+                        <button class="btn btn-primary btn-lg" onclick="advOutros()"><i class="fa fa-file-alt"></i> Advogado(a) / Outros Cargos</button>
+                        <button class="btn btn-success btn-lg" onclick="estagiario()"><i class="fa fa-file-alt"></i> Estagi&aacute;rio de Direito</button>
+                        <hr/>
+                    </div>-->
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="col-md-12" align="center">
+                                <h1 class="page-header">
+                                    <i class="fa fa-briefcase"></i> Trabalhe Conosco</strong>
+                                    <br/>
+                                    <small>
+                                        <small>Atenção: Todos os campos devem ser preenchidos.</small>
+                                    </small>
+                                </h1>
+                            </div>
+
+                            <div class="col-md-1">
+                            </div>
+
+
+                            <div class="col-md-10">
+
+                                <!-- Mensagens de ALERTA -->
+                                <div name="resposta" style="display: none">
+                                </div>
+                                <!-- FIM Mensagens de ALERTA -->
+
+                                <!--<div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button id="btnField1" type="button" class="btn btn-dark active" >Dados Gerais</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button id="btnField2" type="button" class="btn btn-default" >Dados Profissionais</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button id="btnField3" type="button" class="btn btn-default" >Importar Curr&iacute;culo</button>
+                                </div>
+                                </div>-->
+
+                                <form name="curriculo" autocomplete="off">
+
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label>Nome completo</label>
+                                            <input type="text" name="nome" class="form-control" placeholder="Nome do Candidato">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>E-mail</label>
+                                            <input type="text" name="email" class="form-control" placeholder="E-mail">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Celular <small>(apenas números)</small></label>
+                                            <input type="text" name="celular" class="form-control" placeholder="(__) _____-____" data-mask="(00) 00000-0000">
+                                        </div>
+                                    </div>
+
+                                    <!--<button id="cadcanExt" type="button" class="btn btn-dark" onclick="abreAba2()">Continuar</button>-->
+
+                                    <!-- DADOS PROFISSIONAIS -->
+
+                                    <div class="row">
+
+                                        <div class="form-group col-md-4">
+                                            <label>Vaga pretendida</label>
+                                            <select class="form-control" name="cargo" style="border: 1px solid #999; height: 46px;">
+                                                <option value="">Selecione</option>
+                                                <option value="3">Advogado</option>
+                                                <option value="5">Estagi&aacute;rio</option>
+                                                <option value="4">Outros</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Forma&ccedil;&atilde;o - Institui&ccedil;&atilde;o de Ensino</label>
+                                            <input type="text" name="formacao" class="form-control" placeholder="Forma&ccedil;&atilde;o - Institui&ccedil;&atilde;o de Ensino">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Anexar curr&iacute;culo <small>Máx.: 2 MB (apenas pdf)</small></label>
+                                            <input type="file" name="cv" class="form-control" accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                        </div>
+                                    </div>
+
+                                    <fieldset id="advogadoSec" style="display: none;">
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label>N&uacute;mero OAB / Data Inscrição</label>
+                                                <input type="text" name="numOab" class="form-control" placeholder="N&uacute;mero OAB / Data Inscri&ccedil;&atilde;o">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>&Aacute;rea de atua&ccedil;&atilde;o </label>
+                                                <select class="form-control" name="areaAtuacao" style="border: 1px solid #999; height: 46px;">
+                                                    <option value="">Selecione</option>
+                                                    <option value="Civil">Civil</option>
+                                                    <option value="Trabalhista">Trabalhista</option>
+                                                    <option value="Ambas">Ambas</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset id="estagiarioSec" style="display: none;">
+                                        <div class="row">
+                                            <div class="form-group col-md-4">
+                                                <label>Semestre oficial</label>
+                                                <input type="number" name="semestreEstagio" class="form-control" placeholder="Semestre">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Número de matr&iacute;cula</label>
+                                                <input type="text" name="matriculaEstagio" class="form-control" placeholder="Matr&iacute;cula">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Horário de disponibilidade</label>
+                                                <select class="form-control" name="dipoHorarioEstagio" style="border: 1px solid #999; height: 46px;">
+                                                    <option value="">Selecione</option>
+                                                    <option value="Manha">Manh&atilde;</option>
+                                                    <option value="Tarde">Tarde</option>
+                                                    <option value="Ambas">Ambas</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <!--<button type="button" class="btn btn-dark" onclick="abreAba3()">Continuar</button>
+                                    <button type="button" class="btn btn-default" onclick="abreAba1()">Voltar</button>-->
+
+                                    <!-- FIM DADOS PROFISSIONAIS -->
+
+                                    <hr>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
+                                    </div>
+                                    <!--<button type="button" class="btn btn-default" onclick="abreAba2()">Voltar</button>-->
+                                    <!--<button type="button" class="btn btn-default" onclick="limparCadCandidatoExt()">Limpar</button>-->
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div><!-- /.panel-->
+
+                </div>
+            </div><!--/.row-->
+
+            <!-- Modal Confirmacao -->
+            <div id="modalConfirmar" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header alert-default" style="background-color: #eaeaea;">
+                            <h4 class="modal-title">
+                                <i class="fa fa-briefcase"></i> Confima o envio de seu currículo?
+                            </h4>
+                        </div>
+                        <!-- <div class="modal-body">
+                            <p>Deseja concluir seu Cadastro?</p>
+                        </div> -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark">
+                                <i class="fa fa-check"></i> Sim
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-times"></i> Não
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Fim Modal Confirmacao -->
+        </div>	<!--/.main-->
+
+        <div class="footer">
+            <div class="gray-line">
+                <span>Rocha, Marinho E Sales Sociedade de Advogados OAB/CE nº 277</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/fontawesome-all.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+
+    <script type="text/javascript">
+        const emailRegx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        $(document).ready(function() {
+            $('select[name=cargo]').change(mostrarCamposCargo)
+            $('form[name=curriculo]').submit(validarCampos)
+
+            $('#modalConfirmar')
+                .find('.modal-footer')
+                .children()
+                .first()
+                .click(enviar)
+        });
+
+        function validarCampos (e) {
+            e.preventDefault()
+
+            let valido = true
+
+            const payload = {
+                nome: this.nome.value,
+                email: this.email.value,
+                celular: this.celular.value,
+                cargo: Number(this.cargo.value),
+                formacao: this.formacao.value,
+                cv: this.cv.value
+            }
+
+            for (const el of this.elements)
+                $(el).css('border', '')
+
+            Object.entries(payload).forEach(([k, v]) => {
+                if (!v) {
+                    $(this[k]).css('border', '1px solid red')
+                    valido = false
+                }
+                else if (k === 'email') {
+                    if (!emailRegx.test(v)) {
+                        $(this[k]).css('border', '1px solid red')
+                        valido = false
+                    }
+                }
+            })
+
+            switch (payload.cargo) {
+                case 3: // Adv
+                    const adv = {
+                        numOab: this.numOab.value,
+                        areaAtuacao: this.areaAtuacao.value
+                    }
+
+                    Object.entries(adv).forEach(([k, v]) => {
+                        if (!v) {
+                            $(this[k]).css('border', '1px solid red')
+                            valido = false
+                        }
+                    })
+
+                    break
+                case 5: // Est
+                    const est = {
+                        semestreEstagio: this.semestreEstagio.value,
+                        matriculaEstagio: this.matriculaEstagio.value,
+                        dipoHorarioEstagio: this.dipoHorarioEstagio.value
+                    }
+
+                    Object.entries(est).forEach(([k, v]) => {
+                        if (!v) {
+                            $(this[k]).css('border', '1px solid red')
+                            valido = false
+                        }
+                    })
+            }
+
+            if (!valido) return
+
+            abrirModalConfirmar()
+        }
+
+        function enviar (e) {
+            const { currentTarget } = e
+            const $resposta = $('div[name=resposta]').hide(200)
+            const form = document.forms.curriculo
+            const button = ativarSpinner(currentTarget)
+
+            button.nextElementSibling.disabled = true
+
+            $.ajax({
+                type: 'POST',
+                url: 'uploadCurriculoAjax.php',
+                data: new FormData(form),
+                contentType: false,
+                processData: false
+            })
+                .done((res) => {
+                    form.reset()
+                    $(form.cargo).trigger('change')
+                    $resposta
+                        .html(`
+                            <div class="alert alert-success">
+                                <strong>Sucesso</strong>: ${res.mensagem}
+                            </div>
+                        `)
+                        .show(500)
+                })
+                .fail(({ responseJSON }) => {
+                    const status = responseJSON.erro ? 'danger' : 'warning'
+                    const mensagem = responseJSON.erro || responseJSON.mensagem
+                    $resposta
+                        .html(`
+                            <div class="alert alert-${status}">
+                                ${mensagem}
+                            </div>
+                        `)
+                        .show(500)
+                })
+                .always(() => {
+                    $('#modalConfirmar').modal('hide')
+                    desativarSpinner(button, 'check', 'Sim')
+                    button.nextElementSibling.disabled = false
+                })
+        }
+
+        function mostrarCamposCargo ({ target = {}}) {
+            switch (Number(target.value)) {
+                case 3:
+                    $('#estagiarioSec').hide(200)
+                    $('#advogadoSec').show(500)
+                    break
+                case 5:
+                    $('#estagiarioSec').show(500)
+                    $('#advogadoSec').hide(200)
+                    break
+                default:
+                    $('#advogadoSec').hide(200)
+                    $('#estagiarioSec').hide(200)
+            }
+        }
+
+        function abrirModalConfirmar () {
+            $('#modalConfirmar').modal()
+        }
+
+    </script>
+</body>
+</html>

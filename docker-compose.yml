@@ -1,0 +1,38 @@
+version: '3'
+services:
+  app:
+    container_name: sao-app
+    build: ./docker/php-fpm
+    restart: unless-stopped
+    volumes:
+      - ./docker/php-fpm/conf.d:/usr/local/etc/php/conf.d
+      - .:/application
+      - data:/application/public/cvs
+    networks:
+      - interna
+
+  web:
+    container_name: sao-web
+    image: nginx:stable-alpine
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=sao.rochamarinho.adv.br
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/application/public
+      - data:/application/public/cvs
+    networks:
+      - interna
+    labels:
+      - traefik.enable=true
+      - traefik.http.middlewares.sao-prefix.stripprefix.prefixes=/sao
+      - traefik.http.routers.sao.entrypoints=http
+      - traefik.http.routers.sao.middlewares=sao-prefix
+      - traefik.http.routers.sao.rule=Host(`homologacao.rochamarinho.adv.br`) && PathPrefix(`/sao`)
+
+networks:
+  interna:
+    external: true
+
+volumes:
+  data:

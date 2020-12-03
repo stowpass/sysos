@@ -1,0 +1,8 @@
+{
+    "name": "rms/sao",
+    "description": "Sistema de Avaliação Online",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.1"
+    }
+}
